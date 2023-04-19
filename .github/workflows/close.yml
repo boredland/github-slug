@@ -6,6 +6,9 @@ on:
     types:
       - closed
 
+env:
+  GITHUB_HEAD_REF: ${{ github.head_ref}}
+
 jobs:
   test:
     runs-on: ubuntu-latest
