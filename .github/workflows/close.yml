@@ -1,0 +1,16 @@
+name: Cleanup Preview artifacts
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gacts/github-slug@6c659c4f1cf7d490c716d5cd1dedfd0cfb9ad1d1 # v1
+        id: slug
+      - name: test
+        run: echo ${{ steps.slug.outputs.branch-name-slug }}
