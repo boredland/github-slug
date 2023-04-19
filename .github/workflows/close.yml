@@ -8,12 +8,9 @@ on:
 
 jobs:
   test:
-    runs-on: buildjet-2vcpu-ubuntu-2204
+    runs-on: ubuntu-latest
     steps:
       - uses: gacts/github-slug@6c659c4f1cf7d490c716d5cd1dedfd0cfb9ad1d1 # v1
         id: slug
       - name: test
         run: echo ${{ steps.slug.outputs.branch-name-slug }}
-
-
-        #test123
