@@ -6,18 +6,12 @@ on:
     types:
       - closed
 
-env:
-  GITHUB_REF: refs/pull/lala/merge
-  GITHUB_HEAD_REF: ${{ github.head_ref}}
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: gacts/github-slug@6c659c4f1cf7d490c716d5cd1dedfd0cfb9ad1d1 # v1
+      - uses: gacts/github-slug@dec25aaca578647a666efc0b20774831ff19612c
         id: slug
-        with:
-          to-slug: ${{ github.head_ref }}
       - name: test
         run: echo ${{ steps.slug.outputs.branch-name-slug }}
       - name: env
